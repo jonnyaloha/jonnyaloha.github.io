@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "LLM Wiki",
+    pageTitle: "CHOI Wiki",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
