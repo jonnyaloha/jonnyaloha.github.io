@@ -1,5 +1,5 @@
 ---
-title: 2026 Conference
+title: 2026 Conference Info
 parent: Conference
 nav_order: 2
 math: mathjax
