@@ -1,6 +1,5 @@
 ---
-title: Welcome to Quartz
+title: Welcome to CHOI's WIKI
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+I will update asap.
