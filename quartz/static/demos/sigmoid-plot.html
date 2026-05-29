@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+  <style>body { margin: 0; padding: 16px; background: transparent; }</style>
+</head>
+<body>
+  <div id="plot">로딩 중...</div>
+  
+  <script type="py" config='{"packages":["numpy","matplotlib"]}'>
+import matplotlib.pyplot as plt
+import numpy as np
+from pyscript import display
+
+x = np.linspace(-6, 6, 200)
+y = 1 / (1 + np.exp(-x))
+
+fig, ax = plt.subplots(figsize=(7, 4))
+ax.plot(x, y, linewidth=2)
+ax.set_title("Sigmoid")
+ax.grid(True, alpha=0.3)
+ax.axhline(0.5, color='gray', linestyle='--', alpha=0.5)
+ax.axvline(0, color='gray', linestyle='--', alpha=0.5)
+
+display(fig, target="plot", append=False)
+  </script>
+</body>
+</html>
