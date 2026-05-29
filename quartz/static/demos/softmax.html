@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Softmax Demo</title>
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 16px;
+      background: transparent;
+      color: inherit;
+    }
+    #output {
+      font-family: "IBM Plex Mono", monospace;
+      background: #f5f5f5;
+      padding: 12px;
+      border-radius: 6px;
+      white-space: pre-wrap;
+    }
+    @media (prefers-color-scheme: dark) {
+      #output { background: #2a2a2a; color: #eee; }
+    }
+    .loading {
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div id="output" class="loading">Python 로딩 중... (첫 실행 시 몇 초 걸려요)</div>
+
+  <script type="py" config='{"packages":["numpy"]}'>
+import numpy as np
+from pyscript import document
+
+scores = np.array([2.0, 1.0, 0.1])
+exp_scores = np.exp(scores)
+softmax = exp_scores / exp_scores.sum()
+
+result = f"""입력 점수: {scores}
+지수 적용: {exp_scores.round(3)}
+Softmax 결과: {softmax.round(3)}
+합계: {softmax.sum():.3f}"""
+
+output = document.getElementById("output")
+output.textContent = result
+output.classList.remove("loading")
+  </script>
+</body>
+</html>

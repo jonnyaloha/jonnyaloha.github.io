@@ -4,22 +4,22 @@ parent: Conference
 nav_order: 2
 math: mathjax
 ---
+# Softmax 함수
 
-# Attention 계산
+Softmax는 logits을 확률 분포로 변환하는 함수입니다.
 
-아래는 Softmax를 실시간 계산한 결과입니다:
+## 수식
 
-<link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
-<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+$$\text{softmax}(x_i) = \frac{e^{x_i}}{\sum_j e^{x_j}}$$
 
-<script type="py">
-import numpy as np
+## 실시간 계산 예제
 
-scores = np.array([2.0, 1.0, 0.1])
-exp_scores = np.exp(scores)
-softmax = exp_scores / exp_scores.sum()
+<iframe 
+  src="/static/demos/softmax.html" 
+  width="100%" 
+  height="200" 
+  style="border: 1px solid #ccc; border-radius: 6px;"
+  loading="lazy">
+</iframe>
 
-print(f"입력 점수: {scores}")
-print(f"Softmax 결과: {softmax.round(3)}")
-print(f"합계: {softmax.sum():.3f}")
-</script>
+위 결과는 페이지 열 때 브라우저에서 직접 Python(numpy)을 실행한 거예요.
